@@ -5,7 +5,7 @@ import os
 from github import Github
 
 # ─── CONFIGURACIÓN ───────────────────────────────────────────────
-GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
+GITHUB_TOKEN = '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'
 GITHUB_REPO = 'kpoisma123/mitv-config'
 CONFIG_FILE = 'config.json'
 
