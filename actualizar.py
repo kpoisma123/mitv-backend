@@ -2,10 +2,10 @@ import yt_dlp
 import requests
 import json
 import os
-from github import Github
+from github import Github, Auth
 
 # ─── CONFIGURACIÓN ───────────────────────────────────────────────
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = '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'
 GITHUB_REPO = 'kpoisma123/mitv-config'
 CONFIG_FILE = 'config.json'
 
@@ -49,7 +49,8 @@ def actualizar_config():
 
     # Subir config actualizado a GitHub
     if GITHUB_TOKEN:
-        g = Github(GITHUB_TOKEN)
+        auth = Auth.token(GITHUB_TOKEN)
+        g = Github(auth=auth)
         repo = g.get_repo(GITHUB_REPO)
         contents = repo.get_contents(CONFIG_FILE)
         repo.update_file(
